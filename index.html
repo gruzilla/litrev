@@ -101,16 +101,16 @@
 
     <script>
         function showNodeDetails(data) {
-            //console.log(data);
-            data = data.map(function(a) { return a.j;});
-            //console.log(data);
+            // console.log(JSON.stringify(data));
+            data = data.map(function(a) { return a.t;});
+            // console.log(JSON.stringify(data));
 
             html = data.map(function(a) { return '<tr>'+
-                '<td>'+a.ID+'</td>'+
-                '<td>'+a.AUTHORS+'</td>'+
-                '<td>'+a.CONFERENCE+'</td>'+
+                '<td>'+a.id+'</td>'+
+                '<td>'+a.authors+'</td>'+
+                '<td>'+a.conference+'</td>'+
                 '<td>'+a.year+'</td>'+
-                '<td>'+a.TITLE+'</td>'+
+                '<td>'+a.title+'</td>'+
             '</tr>'; });
 
             html = '<table width="100%">'+html.join('')+'</table>';
