@@ -102,18 +102,14 @@
     <script>
         function showNodeDetails(data) {
             //console.log(data);
-            data = data.map(function(a) { return a.j;});
+            data = data[0].j;
             //console.log(data);
 
-            html = data.map(function(a) { return '<tr>'+
-                '<td>'+a.ID+'</td>'+
-                '<td>'+a.AUTHORS+'</td>'+
-                '<td>'+a.CONFERENCE+'</td>'+
-                '<td>'+a.year+'</td>'+
-                '<td>'+a.TITLE+'</td>'+
-            '</tr>'; });
+            html = data.map(function(a) { return '<li>'+
+                a.authors + " (" + a.year + "). " + a.title + " <i class=\"conf\">" + a.conference + "</i>"
+            '</li>'; });
 
-            html = '<table width="100%">'+html.join('')+'</table>';
+            html = '<ul width="100%">'+html.join('')+'</ul>';
 
             $( "#dialog-message" ).html(html);
             $( "#dialog-message" ).dialog({
